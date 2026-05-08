@@ -1,5 +1,5 @@
 
-class pokemon():
+class Pokemon():
     def __init__(self, id, nome, hp,  tipo1, tipo2, velocidade):
         self._id = id
         self._nome = nome
@@ -48,11 +48,8 @@ class pokemon():
         else:
             self._velocidade = valor
 
-    def tomar_dano(self, dano):
-        self.hp -= dano
-
     def esta_vivo(self):
-        if self.hp == 0:
+        if self.hp >= 0:
             return True
         else:
             return False
@@ -63,3 +60,4 @@ class pokemon():
     
     def receber_dano(self, dano):
         self.hp -= dano
+    
