@@ -4,6 +4,7 @@ class Batalha():
     def __init__(self, pkm1, pkm2):
         self._pkm1 = pkm1
         self._pkm2 = pkm2
+        self.primeiro = None
 
     @property
     def pkm1(self):
@@ -26,5 +27,4 @@ class Batalha():
             self._pkm2 = pokemon
         else:
             raise TypeError("não é um pokemon valido")
-    
     

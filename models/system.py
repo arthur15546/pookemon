@@ -33,4 +33,12 @@ class system():
     def descobrir_dano(golpe):
         return golpe["poder"]
     
-    
+    def mais_rapido(pkm1, pkm2):
+        if pkm1.velocidade > pkm2.velocidade:
+            return pkm1
+        else:
+            return pkm2
+        
+    def escolher_golpe(pkm, escolhido):
+        return pkm.golpes[escolhido]
+        
