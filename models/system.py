@@ -1,8 +1,11 @@
 from random import randint
 
 class system():
-    def caucular_dano(atacante, golpe, alvo):
-        pass
+    def caucular_dano(self, atacante, golpe, alvo):
+        dano = self.descobrir_dano(golpe)
+        critico = critico()
+        efetivo = efetivo()
+        return dano + critico + efetivo
     
     def efetivo(pkm1, pkm2):
         if "planta" in pkm1.tipos:
@@ -26,4 +29,8 @@ class system():
             return 5
         else:
             return 0
+    
+    def descobrir_dano(golpe):
+        return golpe["poder"]
+    
     
