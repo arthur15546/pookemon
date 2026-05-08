@@ -3,21 +3,21 @@ from random import randint
 class system():
     def caucular_dano(self, atacante, golpe, alvo):
         dano = self.descobrir_dano(golpe)
-        critico = critico()
-        efetivo = efetivo()
+        critico = self.critico()
+        efetivo = self.efetivo()
         return dano + critico + efetivo
     
     def efetivo(pkm1, pkm2):
         if "planta" in pkm1.tipos:
-            if "agua" in pkm2:
+            if "agua" in pkm2.tipos:
                 return 5
 
         elif "fogo" in pkm1.tipos:
-            if "planta" in pkm2:
+            if "planta" in pkm2.tipos:
                 return 5
         
         elif "agua" in pkm1.tipos:
-            if "fogo" in pkm2:
+            if "fogo" in pkm2.tipos:
                 return 5
         
         else:
@@ -35,10 +35,7 @@ class system():
     
     def mais_rapido(pkm1, pkm2):
         if pkm1.velocidade > pkm2.velocidade:
-            return pkm1
+            return pkm1, pkm2
         else:
-            return pkm2
-        
-    def escolher_golpe(pkm, escolhido):
-        return pkm.golpes[escolhido]
+            return pkm2, pkm1
         

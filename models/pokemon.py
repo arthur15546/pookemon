@@ -40,7 +40,7 @@ class Pokemon():
         self._nome = valor
     @hp.setter
     def hp(self, valor):
-        self._nome = valor
+        self._hp = valor
     
     @velocidade.setter
     def velocidade(self, valor):

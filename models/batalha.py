@@ -22,9 +22,16 @@ class Batalha():
             raise TypeError("não é um pokemon valido")
     
     @pkm2.setter
-    def pkm1(self, pokemon):
+    def pkm2(self, pokemon):
         if isinstance(pokemon, Pokemon):
             self._pkm2 = pokemon
         else:
             raise TypeError("não é um pokemon valido")
+    
+
+    def turno(self, system):
+
+        primeiro, segundo = system.mais_rapido(self.pkm1, self.pkm2)
+        primeiro.atacar()
+
     
