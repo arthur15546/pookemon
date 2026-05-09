@@ -1,6 +1,6 @@
 from random import randint
 
-class system():
+class System():
     def caucular_dano(self, atacante, golpe, alvo):
         dano = self.descobrir_dano(golpe)
         critico = self.critico()

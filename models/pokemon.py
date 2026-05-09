@@ -4,6 +4,7 @@ class Pokemon():
         self._id = id
         self._nome = nome
         self._hp = hp
+        self._max_hp = hp
         self._tipo1 = tipo1
         self._tipo2 = tipo2
         self._velocidade = velocidade
@@ -20,6 +21,10 @@ class Pokemon():
     @property
     def hp(self):
         return self._hp
+    
+    @property
+    def max_hp(self):
+        return self._max_hp
     
     @property
     def tipos(self):
@@ -61,4 +66,11 @@ class Pokemon():
     
     def receber_dano(self, dano):
         self.hp -= dano
+
+    def __str__(self):
+        return f"{self._nome} | HP: {self._hp} | Tipos: {self._tipo1}, {self._tipo2}"
     
+    def curar(self, cura):
+        self.hp += cura
+        if self.hp > self.max_hp:
+            self.hp = self.max_hp
